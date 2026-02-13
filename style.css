@@ -1,0 +1,113 @@
+:root {
+    --bg: #0a0a0a;
+    --surface: #171717;
+    --primary: #10b981; /* Emerald Green */
+    --text: #ffffff;
+    --text-dim: #a3a3a3;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace; /* Tech/Medical vibe */
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+}
+
+.logo { font-weight: bold; letter-spacing: 2px; color: var(--primary); }
+.status { font-size: 0.8rem; color: var(--text-dim); }
+
+/* Screens Logic */
+.screen { display: none; animation: fadeIn 0.5s ease; }
+.screen.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Cards & Buttons */
+.options-grid { display: grid; gap: 1rem; margin-top: 2rem; }
+
+.option-card {
+    background: var(--surface);
+    border: 1px solid #333;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: left;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.option-card:hover {
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.option-card i { color: var(--primary); }
+.option-card h3 { margin: 0; font-size: 1.1rem; }
+.option-card p { margin: 0; font-size: 0.8rem; color: var(--text-dim); }
+
+.btn-primary, .btn-secondary {
+    background: var(--primary);
+    color: black;
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.btn-secondary { background: #333; color: white; }
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #333;
+    margin-bottom: 2rem;
+    border-radius: 2px;
+}
+.fill { height: 100%; background: var(--primary); transition: width 0.3s; }
+
+/* Movie Card Result */
+.movie-card {
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+.movie-card img { width: 100%; height: 200px; object-fit: cover; }
+.movie-info { padding: 1rem; }
+.movie-rating { color: var(--primary); font-weight: bold; font-size: 0.8rem;}
+
+/* Loader */
+.loader {
+    border: 4px solid #333;
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
