@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNC | Decision Doctor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <div class="logo">SYNC</div>
+            <div class="status">System Status: Triage</div>
+        </header>
+
+        <div id="screen-start" class="screen active">
+            <h1>Analysis Paralysis Detected.</h1>
+            <p>Don't scroll. Let the doctor prescribe the perfect movie.</p>
+            <button class="btn-primary" onclick="startConsultation()">Start Consultation</button>
+        </div>
+
+        <div id="screen-energy" class="screen hidden">
+            <div class="progress-bar"><div class="fill" style="width: 33%"></div></div>
+            <h2>Energy Check</h2>
+            <p class="subtitle">How much brain power do you have?</p>
+            
+            <div class="options-grid">
+                <button class="option-card" onclick="selectOption('energy', 'vegetable')">
+                    <i data-lucide="sofa"></i>
+                    <h3>Brain Dead</h3>
+                    <p>Just entertain me.</p>
+                </button>
+                <button class="option-card" onclick="selectOption('energy', 'casual')">
+                    <i data-lucide="battery-medium"></i>
+                    <h3>Casual</h3>
+                    <p>Good story, easy watch.</p>
+                </button>
+                <button class="option-card" onclick="selectOption('energy', 'focus')">
+                    <i data-lucide="brain-circuit"></i>
+                    <h3>Sherlock</h3>
+                    <p>I want to solve puzzles.</p>
+                </button>
+            </div>
+        </div>
+
+        <div id="screen-company" class="screen hidden">
+            <div class="progress-bar"><div class="fill" style="width: 66%"></div></div>
+            <h2>Social Context</h2>
+            <p class="subtitle">Who are you watching with?</p>
+            
+            <div class="options-grid">
+                <button class="option-card" onclick="selectOption('company', 'solo')">
+                    <i data-lucide="user"></i>
+                    <h3>Solo</h3>
+                    <p>Anything goes.</p>
+                </button>
+                <button class="option-card" onclick="selectOption('company', 'date')">
+                    <i data-lucide="heart"></i>
+                    <h3>Date Night</h3>
+                    <p>Romance or Thriller.</p>
+                </button>
+                <button class="option-card" onclick="selectOption('company', 'group')">
+                    <i data-lucide="users"></i>
+                    <h3>The Group</h3>
+                    <p>Crowd pleasers only.</p>
+                </button>
+            </div>
+        </div>
+
+        <div id="screen-time" class="screen hidden">
+            <div class="progress-bar"><div class="fill" style="width: 100%"></div></div>
+            <h2>Time Constraint</h2>
+            <p class="subtitle">When do you need to sleep?</p>
+            
+            <div class="options-grid">
+                <button class="option-card" onclick="selectOption('time', 'short')">
+                    <i data-lucide="timer"></i>
+                    <h3>Quick Fix</h3>
+                    <p>Under 100 mins.</p>
+                </button>
+                <button class="option-card" onclick="selectOption('time', 'standard')">
+                    <i data-lucide="clock"></i>
+                    <h3>Standard</h3>
+                    <p>About 2 hours.</p>
+                </button>
+                <button class="option-card" onclick="selectOption('time', 'epic')">
+                    <i data-lucide="hourglass"></i>
+                    <h3>Epic</h3>
+                    <p>No time limit.</p>
+                </button>
+            </div>
+        </div>
+
+        <div id="screen-loading" class="screen hidden">
+            <div class="loader"></div>
+            <h2>Running Diagnostics...</h2>
+            <p>Matching vibes to database.</p>
+        </div>
+
+        <div id="screen-results" class="screen hidden">
+            <h2>The Prescription</h2>
+            <div id="results-container" class="results-grid">
+                </div>
+            <button class="btn-secondary" onclick="location.reload()">New Consultation</button>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons(); // Initialize icons
+    </script>
+</body>
+</html> 
